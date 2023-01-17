@@ -13,16 +13,19 @@ def extract_parameters(taille):
     # extraction of the data
     horizon = data["horizon"]
     qualifications = data["qualifications"]
+    qualifications.sort()
     staff = data["staff"]
     jobs = data["jobs"]
 
     noms_employes = []
     for person in staff:
         noms_employes.append(person["name"])
+    noms_employes.sort()
 
     noms_projet = []
     for projet in jobs:
         noms_projet.append(projet["name"])
+    noms_projet.sort()
 
     nombre_projets = len(noms_projet)
     nombre_qualif = len(qualifications)
@@ -67,7 +70,7 @@ def extract_parameters(taille):
 
         for qual in person["qualifications"]:
             num_qualif = qualifications.index(qual)
-            qualif[num_person][num_qualif] = 1
+            qualif[num_qualif][num_person] = 1
 
         for date in person["vacations"]:
             if date is not None:
