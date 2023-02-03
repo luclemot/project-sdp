@@ -1150,6 +1150,46 @@ Subject To
    - x[0,4,2,3] - x[0,4,2,4] - x[1,4,2,0] - x[1,4,2,1] - x[1,4,2,2]
    - x[1,4,2,3] - x[1,4,2,4] - x[2,4,2,0] - x[2,4,2,1] - x[2,4,2,2]
    - x[2,4,2,3] - x[2,4,2,4] + affectation[2,4] <= 0
+ R1008: - projet_par_employe[0] + projet_max >= 0
+ R1009: - projet_par_employe[1] + projet_max >= 0
+ R1010: - projet_par_employe[2] + projet_max >= 0
+ R1011: - longueur[0] + longueur_max >= 0
+ R1012: - longueur[1] + longueur_max >= 0
+ R1013: - longueur[2] + longueur_max >= 0
+ R1014: - longueur[3] + longueur_max >= 0
+ R1015: - longueur[4] + longueur_max >= 0
+ R1016: longueur_max = 4
+ R1017: projet_max = 4
+ R1018: longueur_max = 4
+ R1019: projet_max = 3
+ R1020: longueur_max = 4
+ R1021: projet_max = 2
+ R1022: longueur_max = 4
+ R1023: projet_max = 1
+ R1024: longueur_max = 3
+ R1025: projet_max = 4
+ R1026: longueur_max = 3
+ R1027: projet_max = 3
+ R1028: longueur_max = 3
+ R1029: projet_max = 2
+ R1030: longueur_max = 3
+ R1031: projet_max = 1
+ R1032: longueur_max = 2
+ R1033: projet_max = 4
+ R1034: longueur_max = 2
+ R1035: projet_max = 3
+ R1036: longueur_max = 2
+ R1037: projet_max = 2
+ R1038: longueur_max = 2
+ R1039: projet_max = 1
+ R1040: longueur_max = 1
+ R1041: projet_max = 4
+ R1042: longueur_max = 1
+ R1043: projet_max = 3
+ R1044: longueur_max = 1
+ R1045: projet_max = 2
+ R1046: longueur_max = 1
+ R1047: projet_max = 1
 Bounds
  dateFin[0] <= 5
  dateFin[1] <= 5
