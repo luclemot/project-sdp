@@ -18,14 +18,24 @@ def extract_parameters(taille):
     jobs = data["jobs"]
 
     noms_employes = []
+    map_employe_indice = dict()
     for person in staff:
         noms_employes.append(person["name"])
     # noms_employes.sort()
+    for index, item in enumerate(noms_employes):
+        map_employe_indice[index] = item
+
+    map_qualif_indice = dict()
+    for index, item in enumerate(qualifications):
+        map_qualif_indice[index] = item
 
     noms_projet = []
     for projet in jobs:
         noms_projet.append(projet["name"])
     noms_projet.sort()
+    map_job_indice = dict()
+    for index, item in enumerate(noms_projet):
+        map_job_indice[index] = item
 
     nombre_projets = len(noms_projet)
     nombre_qualif = len(qualifications)
@@ -67,6 +77,7 @@ def extract_parameters(taille):
 
     for person in staff:
         num_person = noms_employes.index(person["name"])
+        map_employe_indice[num_person] = person["name"]
 
         for qual in person["qualifications"]:
             num_qualif = qualifications.index(qual)
@@ -76,4 +87,4 @@ def extract_parameters(taille):
             if date is not None:
                 conge[num_person][date] = 0
 
-    return [conge, qualif, d, p, b, besoin]
+    return [map_employe_indice, map_job_indice, map_qualif_indice, conge, qualif, d, p, b, besoin]
