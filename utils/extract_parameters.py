@@ -85,6 +85,6 @@ def extract_parameters(taille):
 
         for date in person["vacations"]:
             if date is not None:
-                conge[num_person][date] = 0
+                conge[num_person][date-1] = 0
 
     return [map_employe_indice, map_job_indice, map_qualif_indice, conge, qualif, d, p, b, besoin]
