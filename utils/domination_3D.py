@@ -5,13 +5,13 @@ import numpy as np
 def domine(tuple1, tuple2):
     # INPUTS
     # un tuple = les 3 fonctions objetifs pour une solution donnée
-    # tuple a la structure suivante: (bénéfice, longueur_max, projet_max)
+    # tuple a la structure suivante: (longueur_max, projet_max)
     # CORPS DE FONCTION
     # ici, on compare donc les résultats de deux solutions, pour trouver laquelle domine laquelle
     # OUTPUTS
     # True si tuple1 domine tuple2, False sinon
 
-    if tuple1[0] >= tuple2[0] and tuple1[1] <= tuple2[1] and tuple1[0] <= tuple2[0]:
+    if tuple1[0] <= tuple2[0] and tuple1[1] <= tuple2[1]:
         return True
     else:
         return False
@@ -26,15 +26,16 @@ def liste_dominants(df):
     # [tuple1, tule2...]
     res = []
 
-    X = np.array(df["projets max"])
-    Y = np.array(df["longueur max"])
-    Z = np.array(df["Benefice"])
+    df = df.loc[df["Benefice"] == df["Benefice"].max()]
+
+    X = np.array(df["longueur max"])
+    Y = np.array(df["projets max"])
 
     for i in range(len(df)):
-        candidat = (X[i], Y[i], Z[i])
+        candidat = (X[i], Y[i])
         flag = True
         for j in range(len(df)):
-            autre = (X[j], Y[j], Z[j])
+            autre = (X[j], Y[j])
             if i != j and not domine(candidat, autre):
                 flag = False
                 # candidat est dominé par au moins une solution, il n'est donc pas dominant
@@ -45,7 +46,7 @@ def liste_dominants(df):
     return res
 
 
-df = pandas.DataFrame([(2, 2, 2), (2, 1, 2)], columns=[
-                      "projets max", "longueur max", "Benefice"])
+# df = pandas.DataFrame([(2, 2, 2), (2, 1, 2)], columns=[
+#                       "projets max", "longueur max", "Benefice"])
 
-print(liste_dominants(df))
+# print(liste_dominants(df))
