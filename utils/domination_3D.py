@@ -1,5 +1,6 @@
 import pandas
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def domine(tuple1, tuple2):
@@ -45,6 +46,30 @@ def liste_dominants(df):
             res.append(candidat)
     return res
 
+
+def graph_dominant(df):
+    X = np.array(df["longueur max"])
+    Y = np.array(df["projets max"])
+    Z = np.array(df["Benefice"])
+    
+    #longueur/projet
+    plt.scatter(X,Y,label="longueur/projet")
+    plt.title("longueur/projet")
+    #plt.show()
+    
+    #longueur/benefice
+    plt.scatter(X,Z,label="longueur/benefice")
+    plt.title("longueur/benefice")
+    #plt.show()
+    
+    #projet/benefice
+    plt.scatter(Y,Z,label="projet/benefice")
+    plt.title("projet/benefice")
+    plt.show()
+    
+    
+    
+    
 
 # df = pandas.DataFrame([(2, 2, 2), (2, 1, 2)], columns=[
 #                       "projets max", "longueur max", "Benefice"])
