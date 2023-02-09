@@ -26,7 +26,7 @@ Enfin, le fichier [final_result](final_result.ipynb) prend en entrée la taille 
 
 ### Outputs de l'étude :
 Les différents outputs de l'étude se trouvent dans le dossier results. Notamment, on retrouve :
-- Les contraintes du problème (pour chacune des instances) en format adapté à Gurobi dans le dossier [constrains](results/constraints/).
+- Les contraintes du problème (pour chacune des instances) en format adapté à Gurobi dans le dossier [constraints](results/constraints/).
 - Les graphes en 3D plottant les valeurs atteintes par les différentes fonctions objectif pour chacune des instances dans le dossier [sys_preference](results/sys_preference/).
 - Les projections en 2D des graphes précédents afin de simplifier le problème dans le dossier [graphs_biobjectifs](results/graphs_biobjectifs/).
 - Les solutions finales, c'est à dire le planning optimal (intitulé i.xlsx avec i la valeur de $Longueur max$) et la table récapitulative des solutions non dominées $res.xlsx$ dans les dossiers nommés [small](results/final/small/), [medium](results/final/medium/) et [large](results/final/large/).
