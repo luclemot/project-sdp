@@ -4,7 +4,7 @@
 Ce projet d'optimisation linéaire s'inscrit dans le contexte du cours de SDP de 3ème année.
 L'objectif du projet est le suivant : étant données des informations sur les employés d'une entreprise, leurs qualifications, leurs congés, et étant donné un ensemble de projets à réaliser, avec leurs prérequis, leurs bénéfices, leurs dates négociées de livraison, proposer le meilleur planning d'affectation possible suivant les critères et objectifs de l'entreprise. Voir le rapport pour la modélisation de ces différents critères et des fonctions objectif.
 
-Nous disposons de trois instances de données, de trois tailles différentes ($small$, $medium$ et $large$).
+Nous disposons de trois instances de données, de trois tailles différentes ($small$ , $medium$ et $large$).
 
 ## Présentation de l'approche :
 Dans un premier temps, il s'agit d'extraire les paramètres des différentes instances données. Ensuite, il s'agit d'optimiser notre problème multi-objectif (en 3 dimensions) afin d'identifier les solutions non dominées. Enfin, en modélisant un ensemble de préférences de décideurs et en appliquant plusieurs méthodes de résolution, nous accédons au meilleur planning pour chacune des instances.
